@@ -14,6 +14,17 @@ app.use(express.static('./Develop/public'));
 // app.use('/api', apiRoutes);
 // app.use('/', htmlRoutes);
 
+app.delete("/api/notes/:id", (req, res) => {
+  for (let i = 0; i < notes.length; i++){
+    if (notes[i].id == req.params.id){
+      notes.splice(i, "1");
+      saveNotes();
+      console.log('File successfully deleted from: db.json');
+      return res.status(200).end();
+    }
+  }
+})
+
 app.post("/api/notes", (req, res) => {
   let newNote = req.body;
   let newId = currentID + 1;
