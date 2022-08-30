@@ -1,29 +1,24 @@
-const path=require("path");
-const fs=require('fs');
 const express = require('express');
 const router = require('express').Router();
 const notes = require('../../db/db.json');
+const fs = require('fs');
+const path = require('path');
+const { deleteNote, findId } = require('../../utils/data');
 
 router.use(express.json());
 
-let currentID = notes.length;
+// let currentID = notes.length;
 
 router.delete("/notes/:id", (req, res) => {
-  for (let i = 0; i < notes.length; i++){
-    if (notes[i].id == req.params.id){
-      notes.splice(i, "1");
-      saveNotes();
-      console.log('File successfully deleted from: db.json');
-      return res.status(200).end();
-    }
-  }
+  let noteId = req.params.id;
+  deleteNote(noteId, res, notes);
 }) 
 
 router.post("/notes", (req, res) => {
   let newNote = req.body;
-  let newId = currentID + 1;
-  currentID++;
-  newNote["id"] = newId;
+  // let newId = currentID + 1;
+  // currentID++;
+  newNote["id"] = findId(notes);
   notes.push(newNote);
   saveNotes();
   return res.status(200).end();
@@ -34,7 +29,7 @@ router.get("/notes", (req,res) => {
 });
 
 function saveNotes() {
-  fs.writeFile(path.join(__dirname,"../../db/db.json"), JSON.stringify(notes), function (err) {
+  fs.writeFile(path.join(__dirname , "../../db/db.json"), JSON.stringify(notes), function (err) {
       if (err) {
           return console.log(err);
       }

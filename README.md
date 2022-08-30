@@ -2,4 +2,10 @@
 
 Instructions:  To run this program you need to open the server.js file in the root directory,  Open the terminal and install express.js and initialize npm.
 
+GitHub repo: https://github.com/tarajevans/note-taker
 
+GitHub Deployed: https://tarajevans.github.io/note-taker/
+
+Heroku:https://note-taker-tje.herokuapp.com/notes
+
+Live Walkthru: 
