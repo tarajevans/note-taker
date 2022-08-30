@@ -8,4 +8,6 @@ GitHub Deployed: https://tarajevans.github.io/note-taker/
 
 Heroku:https://note-taker-tje.herokuapp.com/notes
 
-Live Walkthru: 
+Live Walkthru: https://drive.google.com/file/d/12D9YdOzpXDivT2HWgleRZrccJxqTZIPK/view
+
+![](Screenshot.jpg)
