@@ -6,7 +6,7 @@ GitHub repo: https://github.com/tarajevans/note-taker
 
 GitHub Deployed: https://tarajevans.github.io/note-taker/
 
-Heroku:https://note-taker-tje.herokuapp.com/notes
+Heroku:https://note-taker-tje.herokuapp.com
 
 Live Walkthru: https://drive.google.com/file/d/12D9YdOzpXDivT2HWgleRZrccJxqTZIPK/view
 
